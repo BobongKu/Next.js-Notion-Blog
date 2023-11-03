@@ -10,13 +10,19 @@ export default function Projects({projects}) {
 
     return(
         <Layout>
+          <div  className="flex flex-col items-center justify-center min-h-screen px-5 py-10 mb-10">
             <Head>
                 <title>Bobong</title>
                 <meta name="description" content="Bobong's Portfolio" />
             </Head>
-            <h1>총 프로젝트 : {projects.results.length}</h1>
+            <h1 className="text-4xl font-bold sm:text-6xl">
+              Projects
+            </h1>
 
-            {projects.results.map(project => <ProjectItem data={project}/> )}
+            <div className="grid grid-cols-1 xl:grid-cols-2 md:grid-cols-2  py-10 m-6 gap-8 ">
+              {projects.results.map(project => <ProjectItem data={project}/> )}
+            </div>
+          </div>
         </Layout>
     )
 }
