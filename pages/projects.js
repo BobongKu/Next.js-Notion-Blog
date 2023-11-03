@@ -1,10 +1,10 @@
 import Layout from "../components/layout";
 import Head  from 'next/head';
-import { NOTION_DATABASE_ID,NOTION_API_KEY } from '../config/index'
+import { DATABASE,KEY } from '../config/index'
 import ProjectItem from "../components/projects/project-item";
 
 const { Client } = require('@notionhq/client');
-const notion = new Client({ auth: NOTION_API_KEY });
+const notion = new Client({ auth: KEY });
 
 export default function Projects({projects}) {
 
@@ -32,7 +32,7 @@ export default function Projects({projects}) {
 
 export async function getStaticProps() {
 
-    const databaseId = NOTION_DATABASE_ID;
+    const databaseId = DATABASE;
     const projects = await notion.databases.query({
       database_id: databaseId,
       sorts: [
@@ -41,7 +41,6 @@ export async function getStaticProps() {
           direction: 'ascending',
         },
       ],
-      page_size: 100,
     });
 
 
