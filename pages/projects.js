@@ -8,8 +8,6 @@ const notion = new Client({ auth: NOTION_API_KEY });
 
 export default function Projects({projects}) {
 
-    console.log(projects)
-
     return(
         <Layout>
             <Head>
