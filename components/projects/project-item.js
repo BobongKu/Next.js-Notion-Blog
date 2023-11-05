@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProjectItem({data}) {
 
@@ -9,21 +10,28 @@ export default function ProjectItem({data}) {
     const startDate = data.properties.날짜.date.start
     const cover = data.cover.external?.url || data.cover.file.url
     const tags = data.properties.태그.multi_select
+    const postId = data.id
+
 
     return (
         <div className="project-card">
-            <Image
-                className="rounded-t-xl"
-                src={cover}
-                alt="cover image"
-                width="100"
-                height="60%"
-                layout="responsive"
-                objectFit="none"
-                quality={100}
-            />
+            <Link href={`/post/${postId}`}>
+                <Image
+                    className="rounded-t-xl"
+                    src={cover}
+                    alt="cover image"
+                    width="100"
+                    height="60%"
+                    layout="responsive"
+                    objectFit="none"
+                    quality={100}
+                />
+            </Link>
+            
             <div className="p-4 flex flex-col">
-                <h1 className="text-2xl font-bold">{title}</h1>
+                <Link href={`/post/${postId}`}>
+                    <a className="text-2xl font-bold">{title}</a>
+                </Link>
                 <h1 className="font-bold">{description}</h1>
                 <a href={githubLink}>깃허브 바로가기</a>
                 <h1 className="my-1"> Created : {startDate}</h1>

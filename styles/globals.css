@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .bg-primary {
-    @apply bg-white dark:bg-slate-800
+    @apply bg-white dark:bg-slate-800 font-NanumSquareNeo
 }
 
 .btn-project {
@@ -28,15 +34,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .blur-header {
     @apply text-gray-600
-            sticky top-0 
+            sticky top-0
             bg-white 
-            backdrop-filter backdrop-blur-xl 
+            backdrop-filter backdrop-blur-sm 
             bg-opacity-10 z-30
 }
 
 footer {
     @apply text-gray-600 dark:text-white
-    bg-gray-100 dark:bg-gray-600/20
+            bg-white dark:bg-slate-800 font-NanumSquareNeo
 }
 
 a {
@@ -44,5 +50,5 @@ a {
 }
 
 p {
-    @apply text-slate-500 dark:text-slate-400
+    @apply text-slate-900 dark:text-slate-400
 }
