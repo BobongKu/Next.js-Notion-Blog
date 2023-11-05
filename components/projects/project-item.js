@@ -7,10 +7,8 @@ export default function ProjectItem({data}) {
     // 값이 없을때 처리 방법
     const description = data.properties.Description.rich_text[0]?.plain_text ?? ''; 
     const startDate = data.properties.날짜.date.start
-    const endDate = data.properties.날짜.date.end
     const cover = data.cover.external?.url || data.cover.file.url
     const tags = data.properties.태그.multi_select
-    console.log(description)
 
     return (
         <div className="project-card">

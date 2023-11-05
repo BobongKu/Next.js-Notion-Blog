@@ -10,7 +10,7 @@ export default function Projects({projects}) {
 
     return(
         <Layout>
-          <div  className="flex flex-col items-center justify-center min-h-screen px-5 py-10 mb-10">
+          <div className="flex flex-col items-center justify-center min-h-screen px-5 py-10 mb-10">
             <Head>
                 <title>Bobong</title>
                 <meta name="description" content="Bobong's Portfolio" />

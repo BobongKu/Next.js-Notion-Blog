@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .bg-primary {
     @apply bg-white dark:bg-slate-800
 }
@@ -18,10 +19,19 @@
             dark:border-gray-200/50
             dark:hover:shadow-gray-400/40
             hover:text-blue-600
+            z-10
 }
 
 h1, h2, h3, h4, h5, h6 {
     @apply text-slate-900 dark:text-white
+}
+
+.blur-header {
+    @apply text-gray-600
+            sticky top-0 
+            bg-white 
+            backdrop-filter backdrop-blur-xl 
+            bg-opacity-10 z-30
 }
 
 footer {
