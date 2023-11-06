@@ -2,8 +2,8 @@ import Layout from "../../components/layout";
 import Head  from 'next/head';
 import rehypeRaw from 'rehype-raw'
 import { DATABASE,KEY } from "../../config";
-import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import PostInfo from "../../components/post/post-info";
 
 
 const { Client } = require("@notionhq/client")
@@ -25,29 +25,8 @@ export default function Post({mdString}) {
                     <meta name="description" content="Bobong's Portfolio"/>
                 </Head>
 
-                <div>
-                    <Markdown className="prose lg:prose-xl dark:prose-invert" components={{
-                    p: ({ node, children }) => {
-                        if (node.children[0].tagName === "img") {
-                            const image: any = node.children[0];
-                            return (
-                                <div className="image">
-                                    <Image
-                                        src={`/images/${image.properties.src}`}
-                                        alt={image.properties.alt}
-                                        width="600"
-                                        height="300"
-                                    />
-                                </div>
-                            );
-                        }
-                        // Return default child if it's not an image
-                        return <p>{children}</p>;
-                    },
-                }}>
-                    {markdown}
-                    </Markdown>
-                </div>
+                <PostInfo data={markdown}/>
+
             </div>
         </Layout>
     )
