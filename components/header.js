@@ -9,7 +9,7 @@ export default function Header() {
 
                     <Link href="/">
                         <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                            <span className="ml-3 text-xl">Bobong</span>
+                            <span className="ml-3 text-2xl">Bobong</span>
                         </a>
                     </Link>
 
@@ -23,8 +23,6 @@ export default function Header() {
                         </Link>
 
                         <a href="mailto:jhbgjy7@gmail.com" className="mr-5 hover:text-gray-900">Contect</a>
-
-                        <a className="mr-5 hover:text-gray-900">방명록</a>
                     </nav>
                     <DarkModeToggleButton/>
                 </div>

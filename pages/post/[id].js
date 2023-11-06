@@ -2,14 +2,11 @@ import Layout from "../../components/layout";
 import Head  from 'next/head';
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
 import { DATABASE,KEY } from "../../config";
 import { NotionAPI } from 'notion-client'
 import { NotionRenderer } from "react-notion-x";
-import { Code } from 'react-notion-x/build/third-party/code'
-import { Collection } from 'react-notion-x/build/third-party/collection'
-import { Equation } from 'react-notion-x/build/third-party/equation'
-import { Modal } from 'react-notion-x/build/third-party/modal'
 
 
 const { Client } = require("@notionhq/client")
@@ -22,6 +19,29 @@ export default function Post({recordMap}) {
 
     const { theme } = useTheme()
 
+    const Code = dynamic(() =>
+      import('react-notion-x/build/third-party/code').then((m) => m.Code)
+    )
+    const Collection = dynamic(() =>
+      import('react-notion-x/build/third-party/collection').then(
+        (m) => m.Collection
+      )
+    )
+    const Equation = dynamic(() =>
+      import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
+    )
+    const Pdf = dynamic(
+      () => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf),
+      {
+        ssr: false
+      }
+    )
+    const Modal = dynamic(
+      () => import('react-notion-x/build/third-party/modal').then((m) => m.Modal),
+      {
+        ssr: false
+      }
+    )
     return (
         <Layout>
             <div className="min-h-screen">
@@ -37,7 +57,8 @@ export default function Post({recordMap}) {
                     Code,
                     Collection,
                     Equation,
-                    Modal
+                    Modal,
+                    Pdf
                 }}/>
 
             </div>
