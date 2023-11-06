@@ -1,21 +1,26 @@
 import Layout from "../../components/layout";
 import Head  from 'next/head';
-import rehypeRaw from 'rehype-raw'
+import Link from "next/link";
+import Image from "next/image";
+import { useTheme } from 'next-themes';
 import { DATABASE,KEY } from "../../config";
-import remarkGfm from "remark-gfm";
-import PostInfo from "../../components/post/post-info";
+import { NotionAPI } from 'notion-client'
+import { NotionRenderer } from "react-notion-x";
+import { Code } from 'react-notion-x/build/third-party/code'
+import { Collection } from 'react-notion-x/build/third-party/collection'
+import { Equation } from 'react-notion-x/build/third-party/equation'
+import { Modal } from 'react-notion-x/build/third-party/modal'
 
 
 const { Client } = require("@notionhq/client")
 const notion = new Client({ auth: KEY });
-const { NotionToMarkdown } = require("notion-to-md")
-const n2m = new NotionToMarkdown({ notionClient: notion });
+const notions = new NotionAPI()
 
-export default function Post({mdString}) {
 
-    const markdown = mdString.parent
 
-    console.log(markdown)
+export default function Post({recordMap}) {
+
+    const { theme } = useTheme()
 
     return (
         <Layout>
@@ -25,7 +30,15 @@ export default function Post({mdString}) {
                     <meta name="description" content="Bobong's Portfolio"/>
                 </Head>
 
-                <PostInfo data={markdown}/>
+                <NotionRenderer disableHeader recordMap={recordMap} fullPage={true} darkMode={theme === 'dark'}
+                  components={{
+                    nextImage: Image,
+                    nextLink: Link,
+                    Code,
+                    Collection,
+                    Equation,
+                    Modal
+                }}/>
 
             </div>
         </Layout>
@@ -34,15 +47,14 @@ export default function Post({mdString}) {
 
 export async function getStaticProps({ params }) {
     const postId = params.id;
-  
+
+    const recordMap = await notions.getPage(postId)
     // Fetch the post data from a CMS or database.
-    const mdblocks = await n2m.pageToMarkdown(postId)
-    const mdString = n2m.toMarkdownString(mdblocks)
 
     // Return the post data as props to the page.
     return {
       props: {
-        mdString,
+        recordMap
       },
     };
   }

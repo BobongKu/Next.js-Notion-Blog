@@ -27,7 +27,6 @@ export default function ProjectItem({data}) {
                     quality={100}
                 />
             </Link>
-            
             <div className="p-4 flex flex-col">
                 <Link href={`/post/${postId}`}>
                     <a className="text-2xl font-bold">{title}</a>
