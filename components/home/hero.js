@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import Animation from './../animation';
-import lottieJson from '../../public/Animation - 1698907578297.json'
+import lottieJson from '../../public/bear.json'
 
 
 export default function Hero() {
