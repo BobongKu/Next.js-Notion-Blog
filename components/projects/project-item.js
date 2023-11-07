@@ -4,10 +4,10 @@ import Link from "next/link";
 export default function ProjectItem({data}) {
 
     const title = data.properties.이름.title[0].plain_text
-    const githubLink = data.properties.Github.rich_text[0].href
+    const githubLink = data.properties.Github.rich_text[0]?.href
     // 값이 없을때 처리 방법
     const description = data.properties.Description.rich_text[0]?.plain_text ?? '';
-    const startDate = data.properties.날짜.date.start
+    const startDate = data.properties.날짜.date?.start
     const cover = data.cover.external?.url || data.cover.file.url
     const tags = data.properties.태그.multi_select
     const postId = data.id
