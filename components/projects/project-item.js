@@ -4,45 +4,35 @@ import Link from "next/link";
 export default function ProjectItem({data}) {
 
     const title = data.properties.이름.title[0].plain_text
-    const githubLink = data.properties.Github.rich_text[0]?.href
     // 값이 없을때 처리 방법
     const description = data.properties.Description.rich_text[0]?.plain_text ?? '';
-    const startDate = data.properties.날짜.date?.start
     const cover = data.cover.external?.url || data.cover.file.url
-    const tags = data.properties.태그.multi_select
     const postId = data.id
 
 
     return (
-        <div className="project-card">
+        <>
+            <div class="group relative m-1 flex h-72 w-96 flex-col rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
+            <div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
             <Link href={`/post/${postId}`}>
-                <Image
-                    className="rounded-t-xl"
-                    src={cover}
-                    alt="cover image"
-                    width="100"
-                    height="50%"
-                    layout="responsive"
-                    objectFit="cover"
-                    quality={100}
-                />
+            <Image
+                        className="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                        src={cover}
+                        alt="cover image"
+                        width="100"
+                        height="100"
+                        layout="responsive"
+                        objectFit="cover"
+                        quality={100}
+                    />
             </Link>
-
-            <div className="p-3 flex flex-col">
-                <Link href={`/post/${postId}`}>
-                    <a className="text-xl font-bold">{title}</a>
-                </Link>
-                <h1 className="font-bold">{description}</h1>
-                <a href={githubLink}>깃허브 바로가기</a>
-                <h1 className="my-1"> Created : {startDate}</h1>
-
-                <div className="flex items-start mt-2">
-                    {tags.map((tag) => (
-                        <h1 className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-gray-400 w-30 hover:scale-105" key={tag.id}>{tag.name}</h1>
-                    ))}
                 </div>
+            <div class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+                <h1 class="font-serif text-xl font-bold text-white shadow-xl">{title}</h1>
+                <h1 class="text-sm font-light text-gray-200 shadow-xl">{description}</h1>
             </div>
-        </div>
+            </div>
+        </>
     )
 
 }
