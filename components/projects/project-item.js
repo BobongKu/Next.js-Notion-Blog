@@ -12,7 +12,7 @@ export default function ProjectItem({data}) {
 
     return (
         <>
-            <div class="group relative m-1 flex h-72 w-96 flex-col rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
+            <div class="group relative mx-auto gap-x-1 flex h-64 w-80 xl:h-72 xl:w-96 flex-col rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
             <Link href={`/post/${postId}`}>
             <div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
             <Image
@@ -28,7 +28,7 @@ export default function ProjectItem({data}) {
                 </div>
             </Link>
             <div class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-                <h1 class="font-serif text-xl font-bold text-white shadow-2xl bg-black bg-opacity-30 rounded-md ps-1 pr-1">{title}</h1>
+                <h1 class="font-serif xl:text-xl  text-lg font-bold text-white shadow-2xl bg-black bg-opacity-30 rounded-md ps-1 pr-1">{title}</h1>
                 <h1 class="text-sm font-light text-gray-200 shadow-xl">{description}</h1>
             </div>
             </div>
