@@ -28,7 +28,7 @@ export default function ProjectItem({data}) {
                 </div>
             </Link>
             <div class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
-                <h1 class="font-serif xl:text-xl  text-lg font-bold text-white shadow-2xl bg-black bg-opacity-30 rounded-md ps-1 pr-1">{title}</h1>
+                <h1 class="font-serif xl:text-xl text-md font-bold text-white shadow-2xl bg-black bg-opacity-30 rounded-md ps-1 pr-1">{title}</h1>
                 <h1 class="text-sm font-light text-gray-200 shadow-xl">{description}</h1>
             </div>
             </div>
