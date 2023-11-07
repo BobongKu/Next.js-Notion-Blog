@@ -77,6 +77,7 @@ export async function getStaticProps({ params }) {
       props: {
         recordMap
       },
+      revalidate: 10,
     };
   }
 
@@ -98,5 +99,6 @@ export async function getStaticPaths() {
     return {
       paths,
       fallback: false,
+      revalidate: 10,
     };
   }
