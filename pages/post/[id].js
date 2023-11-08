@@ -42,6 +42,7 @@ export default function Post({recordMap}) {
         ssr: false
       }
     )
+
     return (
         <Layout>
             <div className="min-h-screen">
@@ -98,6 +99,6 @@ export async function getStaticPaths() {
   
     return {
       paths,
-      fallback: 'blocking',
+      fallback: false,
     };
   }

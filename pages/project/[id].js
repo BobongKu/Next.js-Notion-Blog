@@ -7,6 +7,7 @@ import { useTheme } from 'next-themes';
 import { PROJECT_DATABASE,KEY } from "../../config";
 import { NotionAPI } from 'notion-client'
 import { NotionRenderer } from "react-notion-x";
+import { useRouter } from "next/router";
 
 
 const { Client } = require("@notionhq/client")
@@ -97,6 +98,6 @@ export async function getStaticPaths() {
   
     return {
       paths,
-      fallback: 'blocking',
+      fallback: false,
     };
   }

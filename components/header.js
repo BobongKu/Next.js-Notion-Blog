@@ -8,8 +8,10 @@ export default function Header() {
                 <div className="flex flex-wrap items-center justify-between py-2 gap-6 md:py-3 md:gap-0 relative">
                     <input type="checkbox" name="toggle_nav" id="toggle_nav" className="hidden peer"/>
                     <div className="w-full px-6 flex justify-between lg:w-max md:px-0">
-                        <Link href='/' className="flex space-x-2 items-center">
+                        <Link href='/'>
+                            <a aria-label="logo" className="flex space-x-2 items-center">
                                 <span className="text-2xl font-bold text-gray-900 dark:text-white">Bobong</span>
+                            </a>
                         </Link>
                         <div className="flex items-center lg:hidden max-h-10">
                             <label role="button" for="toggle_nav" aria-label="humburger" id="hamburger" className="relative  p-6 -mr-6">
@@ -36,19 +38,23 @@ export default function Header() {
                             gap-6 lg:gap-0
                             ">
                                 <li>
-                                <Link href="/" className="mr-5 flex items-center text-black">
+                                <Link href="/">
+                                    <a className="mr-5 flex items-center text-black">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
                                         <path fillRule="evenodd" d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clipRule="evenodd" />
                                         </svg>
                                         <span>Home</span>
+                                    </a>
                                 </Link>
                                 </li>
                                 <li>
-                                <Link href="/projects" className="mr-5 flex items-center text-black">
+                                <Link href="/projects">
+                                    <a className="mr-5 flex items-center text-black">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
                                         <path fillRule="evenodd" d="M13.5 4.938a7 7 0 11-9.006 1.737c.202-.257.59-.218.793.039.278.352.594.672.943.954.332.269.786-.049.773-.476a5.977 5.977 0 01.572-2.759 6.026 6.026 0 012.486-2.665c.247-.14.55-.016.677.238A6.967 6.967 0 0013.5 4.938zM14 12a4 4 0 01-4 4c-1.913 0-3.52-1.398-3.91-3.182-.093-.429.44-.643.814-.413a4.043 4.043 0 001.601.564c.303.038.531-.24.51-.544a5.975 5.975 0 011.315-4.192.447.447 0 01.431-.16A4.001 4.001 0 0114 12z" clipRule="evenodd" />
                                         </svg>
                                         <span>Projects</span>
+                                    </a>
                                 </Link>
                                 </li>
                                 <li>
