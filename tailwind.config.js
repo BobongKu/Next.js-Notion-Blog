@@ -17,5 +17,8 @@ module.exports = {
       NanumSquareNeo: ['NanumSquareNeo-Variable']
     }
   },
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ]
 }
 

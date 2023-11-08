@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function ProjectItem({data}) {
 
@@ -9,6 +10,7 @@ export default function ProjectItem({data}) {
     const cover = data.cover.external?.url || data.cover.file.url
     const postId = data.id
 
+    const [isLoading, setLoading] = useState(true);
 
     return (
         <>
@@ -16,14 +18,22 @@ export default function ProjectItem({data}) {
             <Link href={`/post/${postId}`}>
             <div className="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
             <Image
-                        className="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                        className={`animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110
+                        ${
+                            isLoading
+                                ? "scale-110 blur-2xl grayscale"
+                                : "scale-100 blur-0 grayscale-0"
+                        }`}
+                        onLoadingComplete={() => setLoading(false)}
                         src={cover}
                         alt="cover image"
                         width="100"
                         height="100"
                         layout="responsive"
                         objectFit="cover"
-                        quality={100}
+                        quality={50}
+                        placeholder="blur" // 추가
+                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
                     />
                 </div>
             </Link>
