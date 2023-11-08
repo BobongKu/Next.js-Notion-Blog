@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
-import { POST_DATABASE,KEY } from "../../config";
+import { PROJECT_DATABASE,KEY } from "../../config";
 import { NotionAPI } from 'notion-client'
 import { NotionRenderer } from "react-notion-x";
 
@@ -67,7 +67,6 @@ export default function Post({recordMap}) {
 }
 
 export async function getStaticProps({ params }) {
-
     const postId = params.id;
 
     const recordMap = await notions.getPage(postId)
@@ -83,15 +82,15 @@ export async function getStaticProps({ params }) {
   }
 
 export async function getStaticPaths() {
-    const postDatabaseId = POST_DATABASE;
-    const posts = await notion.databases.query({
-      database_id: postDatabaseId,
+    const projectDatabaseId = PROJECT_DATABASE;
+    const projects = await notion.databases.query({
+      database_id: projectDatabaseId,
     });
 
-    const paths = posts.results.map((post) => {
+    const paths = projects.results.map((project) => {
       return {
         params: {
-          id: post.id,
+          id: project.id,
         },
       };
     });
