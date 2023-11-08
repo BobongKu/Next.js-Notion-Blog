@@ -15,6 +15,7 @@ export default function Home({projects, posts}) {
       <Head>
         <title>Bobong</title>
         <meta name="description" content="Bobong's Portfolio" />
+        <meta name="google-site-verification" content="3tHDLrRSzGgATP3jmkHIL_mH1WcOWR1X-g8RGQCkS3A" />
       </Head>
 
       <section className="flex min-h-screen flex-col items-center text-gray-600 body-font">
