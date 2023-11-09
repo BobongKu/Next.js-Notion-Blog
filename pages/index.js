@@ -19,10 +19,10 @@ export default function Home({projects, posts}) {
       </Head>
 
       <section className="flex min-h-screen flex-col items-center text-gray-600 body-font">
-            <div className="flex px-5 py-10 md:flex-row flex-col items-center">
+            <div className="flex px-5 py-10 md:flex-row flex-col items-center justify-center">
               <Hero/>
             </div>
-            
+
             <IndexItem data={projects} dir="project"/>
             <IndexItem data={posts} dir="post"/>
       </section>
