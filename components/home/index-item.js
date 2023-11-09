@@ -1,3 +1,4 @@
+import Link from "next/link"
 import ProjectItem from "../projects/project-item"
 
 export default function IndexItem({data,dir}) {
@@ -12,9 +13,11 @@ export default function IndexItem({data,dir}) {
                 ))}
               </div>
               <div className="flex justify-content-end hover:font-bold underline underline-offset-4">
-                <a className="">
-                  View More
-                </a>
+                <Link href={`/${dir}s`}>
+                  <a className="">
+                    View More
+                  </a>
+                </Link>
               </div>
         </div>
     )
