@@ -14,7 +14,7 @@ export default function IndexItem({data,dir}) {
               </div>
               <div className="flex justify-content-end hover:font-bold underline underline-offset-4">
                 <Link href={`/${dir}s`}>
-                  <a className="">
+                  <a className="dark:text-gray-500 dark:hover:text-gray-300">
                     View More
                   </a>
                 </Link>
