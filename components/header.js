@@ -1,7 +1,5 @@
 import DarkModeToggleButton from "./dark-mode-toggle-button";
 import Link from 'next/link';
-import Image from "next/image";
-import Logo from "../public/happy.png"
 
 export default function Header() {
     return (
@@ -12,9 +10,11 @@ export default function Header() {
                     <div className="w-full px-6 flex justify-between lg:w-max md:px-0">
                         <Link href='/'>
                             <a aria-label="logo" className="flex space-x-2 items-center">
-                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+                                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                width="32" height="32" viewBox="0 0 512.000000 512.000000"
+                                preserveAspectRatio="xMidYMid meet">
                                 <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-                                fill="#000000" stroke="none">
+                                fill="currentColor" stroke="none">
                                 <path d="M2270 5041 c-137 -15 -159 -21 -196 -56 -31 -30 -49 -36 -143 -54
                                 -276 -53 -578 -181 -821 -348 -502 -346 -879 -883 -1019 -1453 -53 -216 -65
                                 -329 -66 -595 0 -250 7 -327 50 -540 117 -584 430 -1137 801 -1415 180 -136
@@ -38,7 +38,7 @@ export default function Header() {
                                 -155 1412 -5 456 162 824 527 970 963 61 182 86 399 53 462 -43 81 -155 120
                                 -233 79z"/>
                                 </g>
-                            </svg>
+                                </svg>
                                 <span className="text-2xl font-bold text-gray-900 dark:text-white">Bobong</span>
                             </a>
                         </Link>
