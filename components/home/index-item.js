@@ -11,6 +11,11 @@ export default function IndexItem({data,dir}) {
                   <ProjectItem key={index} data={data} dir={dir}/>
                 ))}
               </div>
+              <div className="flex justify-content-end hover:font-bold underline underline-offset-4">
+                <a className="">
+                  View More
+                </a>
+              </div>
         </div>
     )
 }
