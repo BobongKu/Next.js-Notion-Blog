@@ -28,11 +28,10 @@ export default function ProjectItem({data,dir}) {
                     </div>
                     <ToastContainer
                         position="bottom-right"
-                        autoClose={3000}
-                        limit={1}
+                        autoClose={2000}
                         hideProgressBar={false}
                         newestOnTop={false}
-                        closeOnClick={false}
+                        closeOnClick
                         rtl={false}
                         pauseOnFocusLoss
                         draggable={false}
