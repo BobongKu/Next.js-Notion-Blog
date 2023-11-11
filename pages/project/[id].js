@@ -70,6 +70,7 @@ export async function getStaticProps({ params }) {
     const postId = params.id;
 
     const recordMap = await notions.getPage(postId)
+
     // Fetch the post data from a CMS or database.
 
     // Return the post data as props to the page.
@@ -97,6 +98,6 @@ export async function getStaticPaths() {
   
     return {
       paths,
-      fallback: false,
+      fallback: true,
     };
   }
