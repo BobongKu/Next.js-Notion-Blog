@@ -67,20 +67,24 @@ export default function Post({recordMap}) {
 }
 
 export async function getStaticProps({ params }) {
-    const postId = params.id;
 
-    const recordMap = await notions.getPage(postId)
+  const postId = params.id;
 
-    // Fetch the post data from a CMS or database.
-
-    // Return the post data as props to the page.
+  try {
+    const recordMap = await notions.getPage(postId);
     return {
       props: {
         recordMap
       },
-      revalidate: 10,
+      revalidate: 1,
+    };
+  } catch (error) {
+    // Notion 페이지가 존재하지 않는 경우 빈 객체를 반환합니다.
+    return {
+      notFound: true,
     };
   }
+}
 
 export async function getStaticPaths() {
     const projectDatabaseId = PROJECT_DATABASE;
@@ -98,6 +102,6 @@ export async function getStaticPaths() {
   
     return {
       paths,
-      fallback: true,
+      fallback: false,
     };
   }

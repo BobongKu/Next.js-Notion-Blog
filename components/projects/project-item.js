@@ -6,7 +6,7 @@ import React from "react";
 
 export default function ProjectItem({data,dir}) {
 
-    //toast notification
+    //https://fkhadra.github.io/react-toastify/introduction
     const notify = () => toast.error("공개되지 않은 글입니다.");
 
 
