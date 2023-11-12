@@ -44,8 +44,8 @@ export default function ProjectItem({data,dir}) {
                     </div>
                         <div className="flex items-start mt-1">
                             {tags.map((tag) => (
-                                <Link href={`/${dir}?search=${tag.name}`}>
-                                    <a className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm hover:text-blue-400 dark:hover:text-blue-400 hover:bg-opacity-70 hover:font-bold" key={tag.id}>{tag.name}</a>
+                                <Link href={`/${dir}?search=${tag.name}`} key={tag.id}>
+                                    <a className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm hover:text-blue-400 dark:hover:text-blue-400 hover:bg-opacity-70 hover:font-bold">{tag.name}</a>
                                 </Link>
                             ))}
                         </div>
@@ -72,8 +72,8 @@ export default function ProjectItem({data,dir}) {
                 </div>
                     <div className="flex items-start mt-1">
                         {tags.map((tag) => (
-                            <Link href={`/${dir}?search=${tag.name}`}>
-                                <a className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm hover:text-blue-400 dark:hover:text-blue-400 hover:bg-opacity-70 hover:font-bold" key={tag.id}>{tag.name}</a>
+                            <Link href={`/${dir}?search=${tag.name}`} key={tag.id}>
+                                <a className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm hover:text-blue-400 dark:hover:text-blue-400 hover:bg-opacity-70 hover:font-bold" >{tag.name}</a>
                             </Link>
                         ))}
                     </div>
