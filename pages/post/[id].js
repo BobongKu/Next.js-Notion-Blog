@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
+import { KEY } from "../../config";
 import { NotionAPI } from 'notion-client'
 import { NotionRenderer } from "react-notion-x";
 
