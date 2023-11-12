@@ -1,7 +1,10 @@
 import Image from "next/image"
 import HeroImg from "../../public/hero.jpg"
+import { useState } from "react";
+
 
 export default function Hero() {
+    const [isLoading, setLoading] = useState(true);
     return (
       <div className="container px-6 py-16 mx-auto text-center">
       <div className="max-w-lg mx-auto">

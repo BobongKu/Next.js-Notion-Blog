@@ -4,10 +4,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import React from "react";
 
 
-export default function ProjectItem({data}) {
+export default function ProjectItem({data,dir}) {
 
     //https://fkhadra.github.io/react-toastify/introduction
-    const notify = () => toast.error("공개되지 않은 글입니다.");
+    const notify = () => toast.error("This post is not public.");
 
 
     const title = data.properties.이름.title[0].plain_text
@@ -44,7 +44,9 @@ export default function ProjectItem({data}) {
                     </div>
                         <div className="flex items-start mt-1">
                             {tags.map((tag) => (
-                                <h1 className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm" key={tag.id}>{tag.name}</h1>
+                                <Link href={`/${dir}?search=${tag.name}`}>
+                                    <a className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm hover:text-blue-400 dark:hover:text-blue-400 hover:bg-opacity-70 hover:font-bold" key={tag.id}>{tag.name}</a>
+                                </Link>
                             ))}
                         </div>
                         <div className="flex">
@@ -70,15 +72,16 @@ export default function ProjectItem({data}) {
                 </div>
                     <div className="flex items-start mt-1">
                         {tags.map((tag) => (
-                            <h1 className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm" key={tag.id}>{tag.name}</h1>
+                            <Link href={`/${dir}?search=${tag.name}`}>
+                                <a className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm hover:text-blue-400 dark:hover:text-blue-400 hover:bg-opacity-70 hover:font-bold" key={tag.id}>{tag.name}</a>
+                            </Link>
                         ))}
                     </div>
                     <div className="flex">
-                        <h1 className="px-1 text-sm font-light text-gray-200 mt-1 bg-black bg-opacity-30 rounded-md">{description}</h1>
+                        <h1 className="px-1 text-sm font-light text-gray-200 dark:text-gray-200 mt-1 bg-black bg-opacity-30 rounded-md">{description}</h1>
                     </div>
                 </div>
             </div>
         </>
     )
-
 }
