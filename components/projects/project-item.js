@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import React from "react";
 
 
-export default function ProjectItem({data,dir}) {
+export default function ProjectItem({data}) {
 
     //https://fkhadra.github.io/react-toastify/introduction
     const notify = () => toast.error("공개되지 않은 글입니다.");
@@ -59,7 +59,7 @@ export default function ProjectItem({data,dir}) {
     return (
         <>
             <div className="group relative mx-auto gap-x-1 flex h-64 w-80 xl:h-72 xl:w-96 flex-col rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
-                <Link href={`/${dir}/${postId}`}>
+                <Link href={`/post/${postId}`}>
                     <div className="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
                         <PostImage cover={cover}/>
                     </div>
