@@ -35,7 +35,7 @@ export default function Posts({posts}) {
     )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     const databaseId = POST_DATABASE;
     const posts = await notion.databases.query({
@@ -45,6 +45,5 @@ export async function getStaticProps() {
 
     return {
         props: {posts},
-        revalidate: 1,
     }
 }

@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
-import { PROJECT_DATABASE,POST_DATABASE,KEY } from "../../config";
 import { NotionAPI } from 'notion-client'
 import { NotionRenderer } from "react-notion-x";
 
@@ -68,7 +67,7 @@ export default function Post({recordMap}) {
     )
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
 
   const postId = params.id;
 
@@ -80,7 +79,6 @@ export async function getStaticProps({ params }) {
       props: {
         recordMap
       },
-      revalidate: 1,
     };
   } catch (error) {
     // Notion 페이지가 존재하지 않는 경우 빈 객체를 반환합니다.
@@ -89,30 +87,3 @@ export async function getStaticProps({ params }) {
     };
   }
 }
-
-export async function getStaticPaths() {
-    const postDatabaseId = POST_DATABASE;
-    const posts = await notion.databases.query({
-      database_id: postDatabaseId,
-    });
-
-    const projectDatabaseId = PROJECT_DATABASE;
-    const projects = await notion.databases.query({
-      database_id: projectDatabaseId,
-    });
-
-    const allDatabase = [...posts.results, ...projects.results]
-
-    const paths = allDatabase.map((post) => {
-      return {
-        params: {
-          id: post.id,
-        },
-      };
-    });
-
-    return {
-      paths,
-      fallback: true,
-    };
-  }
