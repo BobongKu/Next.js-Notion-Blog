@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https:/bobong.blog
+Host: https://bobong.blog
 
 # Sitemaps
-Sitemap: https:/bobong.blog/sitemap.xml
+Sitemap: https://bobong.blog/sitemap.xml
