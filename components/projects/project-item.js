@@ -66,21 +66,21 @@ export default function ProjectItem({data,dir}) {
                         <PostImage cover={cover}/>
                     </div>
                 </Link>
-            <div className="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+            <div className="absolute bottom-0 z-20 m-0 pb-4 px-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:scale-110">
                 <div className="flex">
-                    <h1 className="md:text-xl text-md font-bold text-white bg-black bg-opacity-30 rounded-md ps-1 pr-1">{title}</h1>
+                    <h1 className="md:text-xl text-md font-bold text-white bg-black bg-opacity-30 rounded-md ps-1 pr-1 inline">{title}</h1>
                 </div>
-                    <div className="flex items-start mt-1">
-                        {tags.map((tag) => (
-                            <Link href={`/${dir}?search=${tag.name}`} key={tag.id}>
-                                <a className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm hover:text-blue-400 dark:hover:text-blue-400 hover:bg-opacity-70 hover:font-bold" >{tag.name}</a>
-                            </Link>
-                        ))}
-                    </div>
-                    <div className="flex">
-                        <h1 className="px-1 text-sm font-light text-gray-200 dark:text-gray-200 mt-1 bg-black bg-opacity-30 rounded-md">{description}</h1>
-                    </div>
+                <div className="flex items-start mt-1">
+                    {tags.map((tag) => (
+                        <Link href={`/${dir}?search=${tag.name}`} key={tag.id}>
+                            <a className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm hover:text-blue-400 dark:hover:text-blue-400 hover:bg-opacity-70 hover:font-bold" >{tag.name}</a>
+                        </Link>
+                    ))}
                 </div>
+                <div className="flex">
+                    <h1 className="px-1 text-sm font-light text-gray-200 dark:text-gray-200 mt-1 bg-black bg-opacity-30 rounded-md">{description}</h1>
+                </div>
+            </div>
             </div>
         </>
     )

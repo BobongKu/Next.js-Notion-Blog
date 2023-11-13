@@ -4,16 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
-import { KEY } from "../../config";
 import { NotionAPI } from 'notion-client'
 import { NotionRenderer } from "react-notion-x";
 
-
-const { Client } = require("@notionhq/client")
-const notion = new Client({ auth: KEY });
 const notions = new NotionAPI()
-
-
 
 export default function Post({recordMap}) {
 
@@ -51,7 +45,6 @@ export default function Post({recordMap}) {
                     <meta name="description" content="Bobong's Portfolio"/>
                 </Head>
 
-
                 <NotionRenderer disableHeader recordMap={recordMap} fullPage={true} darkMode={theme === 'dark'}
                   components={{
                     nextImage: Image,
@@ -71,7 +64,6 @@ export default function Post({recordMap}) {
 export async function getServerSideProps({ params }) {
 
   const postId = params.id;
-
 
   // const validatePath = paths.some((path) => path.params.id === postId)
   try {
