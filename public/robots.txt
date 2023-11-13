@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https:/bobong.blog
+
+# Sitemaps
+Sitemap: https:/bobong.blog/sitemap.xml
