@@ -6,10 +6,15 @@ import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
 import { NotionAPI } from 'notion-client'
 import { NotionRenderer } from "react-notion-x";
+import { KEY } from '../../config/index'
+
+
+const { Client } = require('@notionhq/client');
+const notion = new Client({ auth: KEY });
 
 const notions = new NotionAPI()
 
-export default function Post({recordMap}) {
+export default function Post({recordMap,response}) {
 
     const { theme } = useTheme()
 
@@ -37,12 +42,15 @@ export default function Post({recordMap}) {
       }
     )
 
+    const title = response.properties.이름.title[0].plain_text
+    const description = response.properties.Description.rich_text[0].plain_text
+
     return (
         <Layout>
             <div className="min-h-screen">
                 <Head>
-                    <title>Bobong</title>
-                    <meta name="description" content="Bobong's Portfolio"/>
+                    <title>{title}</title>
+                    <meta name="description" content={description}/>
                 </Head>
 
                 <NotionRenderer disableHeader recordMap={recordMap} fullPage={true} darkMode={theme === 'dark'}
@@ -65,12 +73,15 @@ export async function getServerSideProps({ params }) {
 
   const postId = params.id;
 
+  const response = await notion.pages.retrieve({ page_id: postId });
+
   // const validatePath = paths.some((path) => path.params.id === postId)
   try {
     const recordMap = await notions.getPage(postId);
     return {
       props: {
-        recordMap
+        recordMap,
+        response
       },
     };
   } catch (error) {

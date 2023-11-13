@@ -11,7 +11,6 @@ export default function Home({projects, posts}) {
 
   return (
     <Layout>
-
       <Head>
         <title>Bobong</title>
         <meta name="description" content="Bobong's Portfolio" />

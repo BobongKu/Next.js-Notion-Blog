@@ -7,3 +7,4 @@ Host: https://bobong.blog
 
 # Sitemaps
 Sitemap: https://bobong.blog/sitemap.xml
+Sitemap: https://bobong.blog/server-sitemap.xml
