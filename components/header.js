@@ -9,7 +9,7 @@ export default function Header() {
                     <input type="checkbox" name="toggle_nav" id="toggle_nav" className="hidden peer"/>
                     <div className="w-full px-6 flex justify-between lg:w-max md:px-0">
                         <Link href='/'>
-                            <a aria-label="logo" className="flex space-x-2 items-center">
+                            <a aria-label="Bobong" className="flex space-x-2 items-center">
                                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                                 width="32" height="32" viewBox="0 0 512.000000 512.000000"
                                 preserveAspectRatio="xMidYMid meet">
@@ -43,7 +43,7 @@ export default function Header() {
                             </a>
                         </Link>
                         <div className="flex items-center lg:hidden max-h-10">
-                            <label role="button" htmlFor="toggle_nav" aria-label="humburger" id="hamburger" className="relative  p-6 -mr-6">
+                            <label role="button" htmlFor="toggle_nav" aria-label="hamburger" id="hamburger" className="relative  p-6 -mr-6">
                                 <div aria-hidden="true" id="line" className="m-auto h-0.5 w-6 rounded bg-sky-900 dark:bg-gray-300 transition duration-300"></div>
                                 <div aria-hidden="true" id="line2" className="m-auto mt-2 h-0.5 w-6 rounded bg-sky-900 dark:bg-gray-300 transition duration-300"></div>
                             </label>
