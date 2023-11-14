@@ -8,7 +8,7 @@ export default function Header() {
                 <div className="flex flex-wrap items-center justify-between py-2 gap-6 md:py-3 md:gap-0 relative">
                     <input type="checkbox" name="toggle_nav" id="toggle_nav" className="hidden peer"/>
                     <div className="w-full px-6 flex justify-between lg:w-max md:px-0">
-                        <Link href='/'>
+                        <Link href='/' legacyBehavior>
                             <a aria-label="Bobong" className="flex space-x-2 items-center">
                                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                                 width="32" height="32" viewBox="0 0 512.000000 512.000000"
@@ -67,7 +67,7 @@ export default function Header() {
                             gap-6 lg:gap-0
                             ">
                                 <li>
-                                <Link href="/">
+                                <Link href="/" legacyBehavior>
                                     <a className="mr-5 flex items-center text-gray-600">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
                                         <path fillRule="evenodd" d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clipRule="evenodd" />
@@ -77,7 +77,7 @@ export default function Header() {
                                 </Link>
                                 </li>
                                 <li>
-                                <Link href="/projects">
+                                <Link href="/projects" legacyBehavior>
                                     <a className="mr-5 flex items-center text-gray-600">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
                                         <path fillRule="evenodd" d="M13.5 4.938a7 7 0 11-9.006 1.737c.202-.257.59-.218.793.039.278.352.594.672.943.954.332.269.786-.049.773-.476a5.977 5.977 0 01.572-2.759 6.026 6.026 0 012.486-2.665c.247-.14.55-.016.677.238A6.967 6.967 0 0013.5 4.938zM14 12a4 4 0 01-4 4c-1.913 0-3.52-1.398-3.91-3.182-.093-.429.44-.643.814-.413a4.043 4.043 0 001.601.564c.303.038.531-.24.51-.544a5.975 5.975 0 011.315-4.192.447.447 0 01.431-.16A4.001 4.001 0 0114 12z" clipRule="evenodd" />
@@ -87,7 +87,7 @@ export default function Header() {
                                 </Link>
                                 </li>
                                 <li>
-                                <Link href="/posts">
+                                <Link href="/posts" legacyBehavior>
                                     <a className="mr-5 flex items-center text-gray-600">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
                                         <path fillRule="evenodd" d="M4.25 2A2.25 2.25 0 002 4.25v2.5A2.25 2.25 0 004.25 9h2.5A2.25 2.25 0 009 6.75v-2.5A2.25 2.25 0 006.75 2h-2.5zm0 9A2.25 2.25 0 002 13.25v2.5A2.25 2.25 0 004.25 18h2.5A2.25 2.25 0 009 15.75v-2.5A2.25 2.25 0 006.75 11h-2.5zm9-9A2.25 2.25 0 0011 4.25v2.5A2.25 2.25 0 0013.25 9h2.5A2.25 2.25 0 0018 6.75v-2.5A2.25 2.25 0 0015.75 2h-2.5zm0 9A2.25 2.25 0 0011 13.25v2.5A2.25 2.25 0 0013.25 18h2.5A2.25 2.25 0 0018 15.75v-2.5A2.25 2.25 0 0015.75 11h-2.5z" clipRule="evenodd" />

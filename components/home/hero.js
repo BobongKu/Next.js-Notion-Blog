@@ -1,10 +1,8 @@
 import Image from "next/image"
 import HeroImg from "../../public/hero.jpg"
-import { useState } from "react";
 
 
 export default function Hero() {
-    const [isLoading, setLoading] = useState(true);
     return (
       <div className="container px-6 py-16 mx-auto text-center">
       <div className="max-w-lg mx-auto">
@@ -13,12 +11,11 @@ export default function Hero() {
       </div>
 
       <div className="flex justify-center mt-10">
-          <Image className="object-cover w-full h-96 rounded-xl lg:w-4/5"
+          <Image className=" w-full h-100 rounded-xl lg:w-4/5 "
             alt="hi"
-            width="450"
-            height="550"
+            width={300}
+            height={100}
             src={HeroImg}
-            objectFit="cover"
            />
       </div>
   </div>

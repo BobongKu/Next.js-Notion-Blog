@@ -21,8 +21,8 @@ export default function ProjectItem({data,dir}) {
     if(public_url===null){
         return (
             <>
-                <div className="group relative mx-auto gap-x-1 flex h-64 w-80 xl:h-72 xl:w-96 flex-col rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
-                    <div className="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70"
+            <div className="group relative mx-auto gap-x-1 flex h-48 w-72 xl:h-64 xl:w-80 flex-col rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
+                <div className="opacity-80 transition ease-in-out group-hover:opacity-100 dark:opacity-70"
                     onClick={notify}>
                         <PostImage cover={cover}/>
                     </div>
@@ -44,7 +44,7 @@ export default function ProjectItem({data,dir}) {
                     </div>
                         <div className="flex items-start mt-1">
                             {tags.map((tag) => (
-                                <Link href={`/${dir}?search=${tag.name}`} key={tag.id}>
+                                <Link href={`/${dir}?search=${tag.name}`} key={tag.id} legacyBehavior>
                                     <a className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm hover:text-blue-400 dark:hover:text-blue-400 hover:bg-opacity-70 hover:font-bold">{tag.name}</a>
                                 </Link>
                             ))}
@@ -60,9 +60,9 @@ export default function ProjectItem({data,dir}) {
 
     return (
         <>
-            <div className="group relative mx-auto gap-x-1 flex h-64 w-80 xl:h-72 xl:w-96 flex-col rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
+            <div className="group relative mx-auto gap-x-1 flex h-48 w-72 xl:h-64 xl:w-80 flex-col rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
                 <Link href={`/post/${postId}`}>
-                    <div className="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+                    <div className="opacity-80 transition ease-in-out group-hover:opacity-100 dark:opacity-70">
                         <PostImage cover={cover}/>
                     </div>
                 </Link>
@@ -72,7 +72,7 @@ export default function ProjectItem({data,dir}) {
                 </div>
                 <div className="flex items-start mt-1">
                     {tags.map((tag) => (
-                        <Link href={`/${dir}?search=${tag.name}`} key={tag.id}>
+                        <Link href={`/${dir}?search=${tag.name}`} key={tag.id} legacyBehavior>
                             <a className="px-1 mr-2 text-white bg-black bg-opacity-30 rounded-md text-xs md:text-sm hover:text-blue-400 dark:hover:text-blue-400 hover:bg-opacity-70 hover:font-bold" >{tag.name}</a>
                         </Link>
                     ))}
