@@ -29,7 +29,7 @@ export default function Home({projects, posts}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
   const projectDatabaseId = PROJECT_DATABASE;
   const projects = await notion.databases.query({
@@ -46,5 +46,6 @@ export async function getServerSideProps() {
 
   return {
       props: {projects,posts},
+      revalidate: 1,
   }
 }
