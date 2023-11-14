@@ -7,15 +7,7 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-    font-display: swap;
 }
-
-@layer utilities {
-    .font-NanumSquareNeo {
-      font-family: 'NanumSquareNeo-Variable', sans-serif;
-    }
-  }
-  
 
 .bg-primary {
     @apply bg-white dark:bg-notion font-NanumSquareNeo
