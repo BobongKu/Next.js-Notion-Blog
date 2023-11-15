@@ -4,6 +4,7 @@ import Hero from '../components/home/hero'
 import { PROJECT_DATABASE,POST_DATABASE,KEY } from '../config/index'
 import IndexItem from '../components/home/index-item'
 
+
 const { Client } = require('@notionhq/client');
 const notion = new Client({ auth: KEY });
 

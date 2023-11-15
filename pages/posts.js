@@ -57,6 +57,12 @@ export async function getServerSideProps(context) {
 
     const baseQuery = {
         database_id: databaseId,
+        sorts: [
+          {
+          property: "Created time",
+          direction: "ascending",
+          },
+        ],
     };
 
     if (search) {
@@ -77,7 +83,7 @@ export async function getServerSideProps(context) {
                     }
                 },
                 {
-                    property: "태그",
+                    property: "Tag",
                     multi_select: {
                         contains: search
                     }

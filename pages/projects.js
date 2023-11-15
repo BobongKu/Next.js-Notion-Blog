@@ -76,7 +76,7 @@ export async function getServerSideProps(context) {
                     }
                 },
                 {
-                    property: "태그",
+                    property: "Tag",
                     multi_select: {
                         contains: search
                     }

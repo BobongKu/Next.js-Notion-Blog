@@ -14,7 +14,7 @@ export default function ProjectItem({data,dir}) {
     // 값이 없을때 처리 방법
     const description = data.properties.Description.rich_text[0]?.plain_text ?? '';
     const cover = data.cover.external?.url || data.cover.file.url
-    const tags = data.properties.태그.multi_select
+    const tags = data.properties.Tag.multi_select
     const postId = data.id
     const public_url = data.public_url
 
