@@ -18,7 +18,7 @@
   
 
 .bg-primary {
-    @apply bg-white dark:bg-notion font-NanumSquareNeo
+    @apply bg-light dark:bg-dark font-NanumSquareNeo
 }
 
 .btn-project {
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 
 footer {
     @apply text-gray-600 dark:text-white
-            bg-white dark:bg-notion font-NanumSquareNeo
+            bg-light dark:bg-dark font-NanumSquareNeo
 }
 
 a {
