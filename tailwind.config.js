@@ -12,7 +12,7 @@ module.exports = {
   theme: {
     extend:{
       colors: {
-        'notion': '#2f3437'
+        'notion': '#1d1e1f'
       },
     },
     fontFamily: {

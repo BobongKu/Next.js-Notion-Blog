@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import 'react-notion-x/src/styles.css'
+import '../styles/react-notion-x.css'
 import 'prismjs/themes/prism-tomorrow.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ThemeProvider } from 'next-themes'
