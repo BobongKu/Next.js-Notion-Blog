@@ -9,12 +9,13 @@ import { NotionRenderer } from "react-notion-x";
 import { KEY } from '../../config/index'
 
 
+
 const { Client } = require('@notionhq/client');
 const notion = new Client({ auth: KEY });
 
 const notions = new NotionAPI()
 
-export default function Post({recordMap,response}) {
+export default function Post({recordMap,page}) {
 
     const { theme } = useTheme()
 
@@ -42,8 +43,8 @@ export default function Post({recordMap,response}) {
       }
     )
 
-    const title = response.properties.이름.title[0].plain_text
-    const description = response.properties.Description.rich_text[0].plain_text
+    const title = page.properties.이름.title[0].plain_text
+    const description = page.properties.Description.rich_text[0].plain_text
 
     return (
         <Layout>
@@ -63,7 +64,6 @@ export default function Post({recordMap,response}) {
                     Modal,
                     Pdf
                 }}/>
-
             </div>
         </Layout>
     )
@@ -73,7 +73,7 @@ export async function getServerSideProps({ params }) {
 
   const postId = params.id;
 
-  const response = await notion.pages.retrieve({ page_id: postId });
+  const page = await notion.pages.retrieve({ page_id: postId });
 
   // const validatePath = paths.some((path) => path.params.id === postId)
   try {
@@ -81,7 +81,7 @@ export async function getServerSideProps({ params }) {
     return {
       props: {
         recordMap,
-        response
+        page,
       },
     };
   } catch (error) {
