@@ -24,10 +24,10 @@ export default function Search({ dir }) {
       </label>
       <div className="relative">
         <input
-          type="search"
+          type="input"
           id="default-search"
           name="search"
-          className="block w-full p-2 text-sm text-gray-900 rounded-lg bg-gray-50 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white"
+          className="block w-full p-2 text-sm text-gray-900 rounded-lg bg-gray-300 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white bg-clip-text{"
           placeholder="Search"
           style={{ appearance: 'textfield' }}
         />
