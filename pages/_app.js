@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import '../styles/react-notion-x.css'
-import 'prismjs/themes/prism-tomorrow.css'
+import '../styles/prism-one-dark.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ThemeProvider } from 'next-themes'
 import NextNProgress from 'nextjs-progressbar';
