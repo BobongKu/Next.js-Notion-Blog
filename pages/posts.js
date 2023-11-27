@@ -60,7 +60,7 @@ export async function getServerSideProps(context) {
         sorts: [
           {
           property: "Created time",
-          direction: "ascending",
+          direction: "descending",
           },
         ],
     };
