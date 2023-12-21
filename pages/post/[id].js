@@ -92,7 +92,7 @@ export default function Post({recordMap,page}) {
                     <meta name="description" content={description}/>
                 </Head>
 
-                <NotionRenderer disableHeader recordMap={recordMap} fullPage={true} darkMode={theme === 'dark'}
+                <NotionRenderer disableHeader recordMap={recordMap} fullPage={true} darkMode={theme === 'dark'}  
                   components={{
                     nextImage: Image,
                     nextLink: Link,
