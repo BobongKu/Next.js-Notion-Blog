@@ -113,17 +113,17 @@ export async function getServerSideProps({ params }) {
 
   const page = await notion.pages.retrieve({ page_id: postId });
 
-  const hit = page.properties.Hits.number
+  // const hit = page.properties.Hits.number
 
-  //Hits
-  const response = await notion.pages.update({
-    page_id: postId,
-    properties: {
-      'Hits': {
-        number: hit+1,
-      },
-    },
-  });
+  // //Hits
+  // const response = await notion.pages.update({
+  //   page_id: postId,
+  //   properties: {
+  //     'Hits': {
+  //       number: hit+1,
+  //     },
+  //   },
+  // });
 
   // const validatePath = paths.some((path) => path.params.id === postId)
   try {
