@@ -90,6 +90,8 @@ export default function Post({recordMap,page}) {
                 <Head>
                     <title>{title}</title>
                     <meta name="description" content={description}/>
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5531401523745788"
+     crossorigin="anonymous"></script>
                 </Head>
 
                 <NotionRenderer disableHeader recordMap={recordMap} fullPage={true} darkMode={theme === 'dark'}  

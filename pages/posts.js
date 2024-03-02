@@ -17,6 +17,8 @@ export default function Posts({posts}) {
             <Head>
                 <title>Bobong</title>
                 <meta name="description" content="Bobong's Portfolio" />
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5531401523745788"
+     crossorigin="anonymous"></script>
             </Head>
             <div className="md:grid xl:grid-cols-5 md:grid-cols-3 sm:flex-col sm:flex">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-600 xl:col-start-3 md:col-start-2 text-center">
