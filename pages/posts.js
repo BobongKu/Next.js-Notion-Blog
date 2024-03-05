@@ -61,7 +61,7 @@ export async function getServerSideProps(context) {
         database_id: databaseId,
         sorts: [
           {
-          property: "Created time",
+          property: "Date",
           direction: "descending",
           },
         ],
